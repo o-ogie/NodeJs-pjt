@@ -1,23 +1,22 @@
 const express = require('express')
 const router = require('router')
-const boardController = require('')
+const boardController = require('../../controllers/boardController')
 
-router.get('/list', boardController.);
+router.get('/list', boardController.list);
 
-router.get('/view', boardController.);
+router.get('/view', boardController.view);
 
-router.get('/write', boardController.);
+router.get('/write', boardController.write);
 
-router.post('/write', boardController.);
+router.post('/write', boardController.write);
 
-router.get('/modify', boardController. boardController.);
+router.get('/modify', boardController.modify);
 
-router.post('/modify', boardController.);
+router.post('/modify', boardController.modify);
 
 router.get(
     '/delete',
-    boardController.,
-    boardController.
+    boardController.delete,
 );
 
 
