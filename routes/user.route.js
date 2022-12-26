@@ -3,6 +3,7 @@ const router = express.Router()
 const userController = require("../controller/user.controller")
 
 router.get("/login",userController.getLogin)
-
+router.post("/login",userController.postLogin)
+router.get("/join",userController.getJoin)
 
 module.exports = router
