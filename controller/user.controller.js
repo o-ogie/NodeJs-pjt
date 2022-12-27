@@ -12,3 +12,13 @@ exports.postLogin = async (req,res,next) => {
     res.setHeader("Set-Cookie",`token=${user.user_id}; path=/;`)
     res.redirect("/")
 }
+
+exports.getJoin = (req,res) => {
+    res.render("user/join.html")
+}
+
+exports.postJoin = async (req,res) => {
+    const {user_id,user_pw,user_name,user_pwcheck,user_email,user_gender} = req.body;
+    const user = await userService.getUserJoin({user_id,user_pw,user_name,user_pwcheck,user_email,user_gender})
+    res.redirect("user/login.html")   
+}

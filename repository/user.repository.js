@@ -13,3 +13,11 @@ exports.findOne = async ({where}) => {
         throw new Error(e)
     }
 }
+
+exports.userJoin = async ({joinInfo}) => {
+    console.log("userJoin joinInfo : " + joinInfo)
+    const payload = Object.entries(joinInfo).map(([k,v]) =>`'${v}'`).join(",")
+    console.log("userJoin payload : " + payload)
+    const sql = `INSERT INTO user (user_id,user_pw,user_name,user_pwcheck,user_email,user_gender) values (${payload});`
+    return null
+}
