@@ -7,8 +7,8 @@ exports.getUser = async ({user_id,user_pw}) => {
     return user
 }
 
-exports.getUserJoin = async ({user_id,user_pw,user_name,user_pwcheck,user_email,user_gender}) => {
-    const joinInfo = {user_id,user_pw,user_name,user_pwcheck,user_email,user_gender}
+exports.getUserJoin = async ({user_id,user_pw,user_name,nickname,birth,gender,phone,tel}) => {
+    const joinInfo = {user_id,user_pw,user_name,nickname,birth,gender,phone,tel}
     const userJoin = await userRepository.userJoin({joinInfo})
     return userJoin
 }

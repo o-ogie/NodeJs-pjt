@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul,li{
+    list-style: none;
+}
+
+#header{
+    width: 1200px;
+    height: 40px;
+    margin: 0 auto;
+}
+#header > h3 {
+    text-align: center;
+}
+
+#body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#body > form > div {
+    margin-top: 50px;
+}
