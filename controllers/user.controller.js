@@ -19,9 +19,9 @@ exports.getJoin = (req,res) => {
 }
 
 exports.postJoin = async (req,res) => {
-    const {user_id,user_pw,user_name,user_pwcheck,user_email,user_gender} = req.body;
-    const user = await userService.getUserJoin({user_id,user_pw,user_name,user_pwcheck,user_email,user_gender})
-    res.redirect("user/login.html")   
+    const {user_id,user_pw,user_name,user_email,user_gender} = req.body;
+    const user = await userService.getUserJoin({user_id,user_pw,user_name,user_email,user_gender})
+    res.redirect("/user/login")   
 }
 
 exports.logout = (req,res)=>{
