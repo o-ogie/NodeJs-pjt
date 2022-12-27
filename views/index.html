@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판Main페이지</title>
     <link href="/css/index.css" rel="stylesheet">
-    <script src="/js/index.js"></script>
+    
 </head>
 <body>
+
+    {% if token %}
+    {{token}}님 어서오세요.
+    <a href="/user/logout">로그아웃</a>
+    {% else %}
+    로그인하세요....
+    {% endif %}
+
     <!-- 로그인 회원가입 퀵메뉴 -->
     <div class="qck_menu">
         <div id="qck_btn"></div>
@@ -68,5 +76,7 @@
         
     </div>
     <div id='top' onclick="window.scrollTo(0,0);">TOP</div>
+
+    <script src="/js/index.js"></script>
 </body>
 </html>

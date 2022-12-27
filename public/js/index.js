@@ -1,8 +1,8 @@
-const qck_btn = document.querySelector('#qck_btn:after')
-const qck_menu = document.querySelector('.qck_menu')
+// const qck_btn = document.querySelector('#qck_btn')
+// const qck_menu = document.querySelector('.qck_menu')
 
-const qckHandler = () => {
-    qck_menu.classList.toggle('hide')
-}
+// const qckHandler = (e) => {
+//     qck_menu.classList.toggle('hide')
+// }
 
-qck_btn.addEventListener('click', qckHandler)
+// qck_btn.addEventListener('click', qckHandler)
