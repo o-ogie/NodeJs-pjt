@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    write page
+    <form method="post" action="/board/write">
+        <ul>
+            <li>글제목: <input type="text" name="subject"></li>
+            <li>글내용: <input type="text" name="content"></li>
+        </ul>
+        <button type="submit">완료</button>
+    </form>
+    <script type="text/javascript" src="/js/board.js"></script>
 </body>
 </html>

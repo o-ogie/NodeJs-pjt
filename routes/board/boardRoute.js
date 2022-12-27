@@ -6,18 +6,15 @@ router.get('/list', boardController.list);
 
 router.get('/view', boardController.view);
 
-router.get('/write', boardController.write);
+router.get('/write', boardController.writeGet);
 
-router.post('/write', boardController.write);
+router.post('/write', boardController.writePost);
 
 router.get('/modify', boardController.modify);
 
 router.post('/modify', boardController.modify);
 
-router.get(
-    '/delete',
-    boardController.delete,
-);
+router.get("/delete",boardController.delete);
 
 
 module.exports = router;

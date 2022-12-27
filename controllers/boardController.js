@@ -1,4 +1,3 @@
-const pool = require('../models/db/db')
 
 exports.list = (req,res)=>{
     res.render('board/list.html')
@@ -23,7 +22,6 @@ exports.writePost = (req,res)=>{
     res.redirect('/board/view')
 }
 
-
 exports.view = (req,res)=>{
     res.render('board/view.html')
 }
@@ -33,5 +31,5 @@ exports.modify = (req,res)=>{
 }
 
 exports.delete = (req,res)=>{
-    res.send('delete complete')
+    // res.send('delete complete')
 }
