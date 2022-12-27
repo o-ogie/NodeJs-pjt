@@ -6,81 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판Main페이지</title>
     <link href="/css/index.css" rel="stylesheet">
+    <script src="/js/index.js"></script>
 </head>
 <body>
-    <div id="wrap">
-        <div id="header">
-            <!-- 로고 -->
-            <div>
-                <h1>
-                    <a href="/">Logo</a>
-                </h1>
-            </div>
-
-            <!--user-->
-            <div id="user">
-                <ul>
-                    <li>
-                        <a href="/user/profile">test</a>님 안녕하세요.
-                        <button><a href="">∨</a></button>
-                    </li>
-                    <li><a href="/user/logout">로그아웃</a></li>
-                </ul>
-
-            </div>
+    <!-- 로그인 회원가입 퀵메뉴 -->
+    <div class="qck_menu">
+        <div id="qck_btn"></div>
+        <div id="qck_list">
+            <ul>
+                <li>
+                    <a href="/user/login">
+                        로그인
+                    </a>
+                    <a href="/user/join">
+                        회원가입
+                    </a>
+                </li>
+            </ul>
         </div>
+       
+        
+        
+    </div>
+    <div id="wrap">
+        <div>
+            <h1 id="Logo">
+                <a href="/">Logo</a>
+            </h1>
+        </div>
+
+        <!-- Slide -->
         <div id="visual">
+
             <div id="slide">
                 <ul>
-                    <li><img src="https://img.freepik.com/premium-psd/burger-social-media-web-banner-template_440834-1615.jpg?w=1800" height="300px" width="1200px" alt=""></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <img src="" alt="">
+                    </li>
                     <li></li>
                     <li></li>
                 </ul>
             </div>
-            <div id="slide_btn">
-                <button><a href=""><</a></button>
-                <button><a href="">></a></button>
-            </div>
+
+            <progress class="progressTag" value="100" max="100">
         </div>
 
         <div id="content">
-
-            <!-- 인기 게시글 -->
-            <div class="ctnt">
-                <div>
-                    인기게시글 <a href="">more</a>
-                </div>
-
-                <!-- 인기 게시글 -->
-                <div>
-                    <ul>
-                        <li>테스트 게시글이요.</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- 공지사항 -->
-            <div class="cntn">
-
-                <div>
-                    공지사항 <a href="/board/notice">more</a>
-                </div>
-
-                <!-- 공지사항 게시글 -->
-                <div>
-                    <ul>
-                        <li>테스트글입니다</li>
-                    </ul>
+            <div>
+                <div class="pic">공지사진</div>
+                <div class="categori">
+                    <div id="text">
+                        hello
+                    </div>
                 </div>
             </div>
+            <div>
+                <div class="categori">커뮤니티</div>
+                <div class="pic">커뮤사진</div>
+            </div>
         </div>
-
-        <div id="footer">
-
-        </div>
+        
     </div>
+    <div id='top' onclick="window.scrollTo(0,0);">TOP</div>
 </body>
 </html>
