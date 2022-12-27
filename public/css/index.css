@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#wrap {
+    width: 1200px;
+    margin: auto;
+    max-height: 300px;
+    /* margin: 60px; */
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header > div {
+    margin: 20px 30px;
+}
+
+#user > ul > li {
+    display: inline-block;
+}
+
+
+
+#visual > div:nth-child(2) {
+    width: 30px;
+    float: right;
+    text-align: center;
+}
+#slide > ul > li{
+    max-width: 1200px;
+    max-height: 300px;
+}
+
+#slide > ul > li > img {
+    overflow: hidden;
+}
+
+#cntn {
+
+    width: 600px;
+}
