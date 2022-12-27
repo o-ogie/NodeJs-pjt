@@ -5,21 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link href="/css/login.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Login page</h2>
-    <form action="/user/login" method="post">
-        <ul>
-            <li>
-                아이디 : <input type="text" name="user_id" placeholder="아이디를 입력하세요">
-            </li>
-            <li>
-                비밀번호 : <input type="password" name="user_pw" placeholder="비밀번호를 입력하세요"> 
-            </li>
-        </ul>
-        <button type="submit">로그인</button>
-        <a href="./join">회원가입</a>
-    </form>
+
+    <div id="header">
+        <h1>
+            <a href="/">
+                Logo
+            </a>
+        </h1>
+    </div>
+
+    <h2 style="text-align: center;">Login page</h2>
+
+    <div id="login_form">
+        <div>
+            <form action="/user/login" method="post">
+                <ul>
+                    <li>
+                        <span id="id">아이디 :</span><input type="text" name="user_id" placeholder="아이디를 입력하세요">
+                    </li>
+                    <li>
+                        <span id="pw">비밀번호 :</span> <input type="password" name="user_pw" placeholder="비밀번호를 입력하세요">
+                    </li>
+                </ul>
+                <div id="access_btn">
+                    <button type="submit">로그인</button>
+                    <a href="/user/join">회원가입</a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+
     <script type="text/javascript" src="/js/login.js"></script>
 </body>
 </html>

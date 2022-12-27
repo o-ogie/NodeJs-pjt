@@ -14,6 +14,13 @@ app.use(express.urlencoded({extended:false}))
 app.use(cookieParser())
 app.use(router)
 
+app.use((error, req, res, next)=>{
+    res.send(`
+    <script type='text/javascript'>
+    alert("${error.message}")
+    history.back()
+    </script>`)
+})
 
 app.listen(3000,()=>{
     console.log('Server Start')
