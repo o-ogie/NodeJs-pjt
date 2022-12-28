@@ -1,7 +1,6 @@
 {
   "name": "nodejs1-pjt",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,5 +14,14 @@
     "express": "^4.18.2",
     "mysql2": "^2.3.3",
     "nunjucks": "^3.2.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o-ogie/NooeJs-pjt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/o-ogie/NooeJs-pjt/issues"
+  },
+  "homepage": "https://github.com/o-ogie/NooeJs-pjt#readme",
+  "description": ""
 }

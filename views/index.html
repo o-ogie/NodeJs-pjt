@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>게시판Main페이지</title>
+    <link href="/css/index.css" rel="stylesheet">
+    
 </head>
 <body>
-    인덱스 페이지입니다.
+
+    {% if token %}
+    {{token}}님 어서오세요.
+    <a href="/user/logout">로그아웃</a>
+    {% else %}
+    로그인하세요....
+    {% endif %}
+
+    <!-- 로그인 회원가입 퀵메뉴 -->
+    <div class="qck_menu">
+        <div id="qck_btn"></div>
+        <div id="qck_list">
+            <ul>
+                <li>
+                    <a href="/user/login">
+                        로그인
+                    </a>
+                    <a href="/user/join">
+                        회원가입
+                    </a>
+                </li>
+            </ul>
+        </div>
+       
+        
+        
+    </div>
+    <div id="wrap">
+        <div>
+            <h1 id="Logo">
+                <a href="/">Logo</a>
+            </h1>
+        </div>
+
+        <!-- Slide -->
+        <div id="visual">
+
+            <div id="slide">
+                <ul>
+                    <li>
+                        <img src="" alt="">
+                    </li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <progress class="progressTag" value="100" max="100">
+        </div>
+
+        <div id="content">
+            <div>
+                <div class="pic">공지사진</div>
+                <div class="categori">
+                    <div id="text">
+                        hello
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="categori">커뮤니티</div>
+                <div class="pic">커뮤사진</div>
+            </div>
+        </div>
+        
+    </div>
+    <div id='top' onclick="window.scrollTo(0,0);">TOP</div>
+
+    <script src="/js/index.js"></script>
 </body>
 </html>
