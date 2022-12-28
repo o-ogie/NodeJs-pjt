@@ -7,5 +7,6 @@ router.post("/login",userController.postLogin)
 router.get("/join",userController.getJoin)
 router.post("/join",userController.postJoin)
 router.get('/logout',userController.logout)
+router.get("/profile",userController.getProfile)
 
 module.exports = router
