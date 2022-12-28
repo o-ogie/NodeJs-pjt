@@ -9,7 +9,6 @@ exports.postLogin = async (req,res,next) => {
     const {user_id,user_pw} = req.body
     const user = await userService.getUser({user_id,user_pw})
     if(user === undefined) return next(new Error("아이디와 패스워드가 일치하지 않습니다."))
-    // console.log(user)
     res.setHeader("Set-Cookie",`token=${user.user_id}; path=/;`)
     res.redirect("/")
 }
@@ -22,6 +21,12 @@ exports.postJoin = async (req,res) => {
     const {user_id,user_pw,user_name,nickname,birth,gender,phone,tel} = req.body;
     const user = await userService.getUserJoin({user_id,user_pw,user_name,nickname,birth,gender,phone,tel})
     res.redirect("/user/login")   
+}
+
+exports.getProfile = async (req,res) => {
+    const user_id = req.cookies.token
+    const [user] = await userService.getUserProfile(user_id)
+    res.render("user/profile.html",{user})
 }
 
 exports.logout = (req,res)=>{
