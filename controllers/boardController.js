@@ -10,7 +10,6 @@ exports.writeGet = (req,res)=>{
 
 exports.writePost = async (req,res)=>{
     const {subject,content} = req.body;
-    console.log("subject , content ::" + req.body.subject);
     const writePost = await service.postWrite({subject,content})
     res.redirect('/board/view')
 }
