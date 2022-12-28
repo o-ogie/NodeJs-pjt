@@ -1,3 +1,4 @@
+const service = require('../services/boardService')
 
 exports.list = (req,res)=>{
     res.render('board/list.html')
@@ -7,18 +8,10 @@ exports.writeGet = (req,res)=>{
     res.render('board/write.html')
 }
 
-exports.writePost = (req,res)=>{
-    // const {subject, content} = req.body
-    // if(subject === ''){
-    //     res.send(`
-    //     <script type="text/javascript">
-    //         alert("${'제목을 입력해주세요'}")
-    //         location.href="${path}"
-    //     </script>
-    //     `)
-    // } else {
-    //     `INSERT INTO jung(subject, content) values('${subject}', '${content}')`
-    // }
+exports.writePost = async (req,res)=>{
+    const {subject,content} = req.body;
+    console.log("subject , content ::" + req.body.subject);
+    const writePost = await service.postWrite({subject,content})
     res.redirect('/board/view')
 }
 
