@@ -10,15 +10,8 @@
 </head>
 <body>
 
-    {% if token %}
-    {{token}}님 어서오세요.
-    <a href="/user/logout">로그아웃</a>
-    {% else %}
-    로그인하세요....
-    {% endif %}
-
     <!-- 로그인 회원가입 퀵메뉴 -->
-    <div class="qck_menu">
+    <!-- <div class="qck_menu">
         <div id="qck_btn"></div>
         <div id="qck_list">
             <ul>
@@ -31,12 +24,20 @@
                     </a>
                 </li>
             </ul>
-        </div>
-       
-        
-        
-    </div>
+        </div> 
+    </div> -->
+    
     <div id="wrap">
+        <div id="user">
+            {% if token %}
+            {{token}}님 어서오세요.
+            <a href="/user/logout">로그아웃</a>
+            <a href="/user/profile">내 정보</a>
+            {% else %}
+            <a href="/user/login">로그인</a>
+            <a href="/user/join">회원가입</a>
+            {% endif %}
+        </div>
         <div>
             <h1 id="Logo">
                 <a href="/">Logo</a>
@@ -44,20 +45,31 @@
         </div>
 
         <!-- Slide -->
-        <div id="visual">
-
-            <div id="slide">
-                <ul>
-                    <li>
-                        <img src="" alt="">
+        <div class="kind_wrap">
+            <div class="kind_slider">
+              <ul class="slider">
+                    <li id="slide1">
+                        <img src="https://health.chosun.com/site/data/img_dir/2022/08/12/2022081201989_0.jpg" style="width:1200px; height:450px;" alt="">
                     </li>
-                    <li></li>
-                    <li></li>
+                    <li id="slide2">
+                        <img src="https://img.freepik.com/premium-photo/traditional-food-chicken-soup-with-ginseng_1205-8408.jpg?w=2000" style="width:1200px; height:450px;" alt="">
+                    </li>
+                    <li id="slide3">
+                        <img src="https://img.freepik.com/free-photo/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish_1150-42988.jpg?w=2000&t=st=1672205001~exp=1672205601~hmac=8745d7715a12f23e211f1d40c48f231cd1d87b88a2f3dd3c7da8abffb7d243d5" 
+                        style="width:1200px; height:450px;", alt="">
+                    </li>
                 </ul>
             </div>
-
-            <progress class="progressTag" value="100" max="100">
+            <!-- <progress class="progressTag" value="100" max="100"> 나중에. -->
         </div>
+        <div id="arrow_box">
+            <div class="arrow">
+                <a href="" class="prev"><</a>
+                <a href="" class="next">></a>
+            </div>
+        </div>
+        
+
 
         <div id="content">
             <div>
