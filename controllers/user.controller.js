@@ -33,8 +33,8 @@ exports.postJoin = async (req,res) => {
 }
 
 exports.getProfile = async (req,res) => {
-    const user_id = req.cookies.token
-    const [user] = await userService.getUserProfile(user_id)
+    const cookies = JSON.parse(req.cookies.token)
+    const [user] = await userService.getUserProfile({id:cookies.id})
     res.render("user/profile.html",{user})
 }
 

@@ -21,7 +21,8 @@ exports.userJoin = async ({joinInfo}) => {
 
 exports.userProfile = async (userInfo) => {
     const payload = userInfo
-    const sql = `SELECT * FROM user WHERE user_id="${payload}";`
+    console.log('payload:::::::::::::',payload)
+    const sql = `SELECT * FROM user WHERE user_id="${payload.id}";`
     const [result] = await db.query(sql)
 
     return result
