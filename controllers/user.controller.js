@@ -10,6 +10,17 @@ exports.postLogin = async (req,res,next) => {
     const user = await userService.getUser({user_id,user_pw})
     if(user === undefined) return next(new Error("아이디와 패스워드가 일치하지 않습니다."))
     console.log('user::::::::::::::::::',user)
+
+    // const cookies = {
+    //     id : user.user_id,
+    //     name : user.user_name,
+    //     nickname : user.nickname,
+    //     gender : user.gender,
+    // }
+
+    // const setCookie = JSON.stringify(cookies)
+    // console.log(cookies)
+    // console.log(typeof setCookie)
     res.setHeader("Set-Cookie",`token= id=${user.user_id} nickname=${user.nickname}; path=/;`)
     res.redirect("/")
 }
