@@ -18,7 +18,7 @@ router.get('/',(req,res)=>{
                     }, {})
 
     console.log('token::::',cookies)
-    res.render('index.html',{token:cookies.id})
+    res.render('index.html',{token: decodeURI(cookies.nickname)})
 })
 router.use('/user', user)
 router.use('/board', board)

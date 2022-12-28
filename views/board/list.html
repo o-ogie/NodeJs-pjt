@@ -7,6 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    list page
+
+    <div>
+        <h1>
+            <a href="/">Logo</a>
+        </h1>
+    </div>
+
+    <div id="wrap">
+
+        <div id="list">
+            <table>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성자</td>
+                    <td>작성일</td>
+                    <td>조회수</td>
+                </tr>
+
+                {% for item in list %}
+                <tr>
+                    <td>{{loop.index}}}</td>
+                    <td>{{item.subject}}</td>
+                    <td>{{item.writer}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.hit}}</td>
+                </tr>
+                {% endfor %}
+
+                
+            </table>
+        </div>
+    </div>
+
 </body>
 </html>
