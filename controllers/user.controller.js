@@ -10,7 +10,13 @@ exports.postLogin = async (req,res,next) => {
     const {user_id,user_pw} = req.body
     const user = await userService.getUser({user_id,user_pw})
     if(user === undefined) return next(new Error("아이디와 패스워드가 일치하지 않습니다."))
-    res.setHeader("Set-Cookie",`token= id=${user.user_id} nickname=${encodeURI(user.nickname)}; path=/;`)
+    const token = {
+        id : user.user_id,
+        nickname: encodeURI(user.nickname)
+    }
+    const cookies = JSON.stringify(token)
+
+    res.setHeader("Set-Cookie",`token= ${cookies}; path=/;`)
     res.redirect(`/`)
 }
 

@@ -5,12 +5,23 @@ exports.list = (req,res)=>{
 }
 
 exports.writeGet = (req,res)=>{
-    res.render('board/write.html')
+    const {token} = req.cookies
+
+    const cookies = token
+                        .split(' ')
+                        .map(v=>v.split('='))
+                        .reduce((acc,val)=>{
+                            const [k,v] = val
+                            acc[k] = v
+                            return acc
+                        }, {})
+
+    res.render('board/write.html',{nickname: cookies.nickname})
 }
 
 exports.writePost = async (req,res)=>{
-    const {subject,content} = req.body;
-    const writePost = await service.postWrite({subject,content})
+    const {nickname, subject,content} = req.body;
+    const writePost = await service.postWrite({nickname, subject, content})
     res.redirect('/board/view')
 }
 

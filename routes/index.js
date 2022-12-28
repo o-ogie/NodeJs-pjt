@@ -7,18 +7,11 @@ const admin = require('./admin.route')
 
 
 router.get('/',(req,res)=>{
-    const {token} = req.cookies
-    const cookies = token
-                    .split(' ')
-                    .map(v=>v.split('='))
-                    .reduce((acc,val)=>{
-                        const [k,v] = val
-                        acc[k]=v
-                        return acc
-                    }, {})
+    const {token} =req.cookies
+    const cookies = JSON.parse(token)
 
-    console.log('token::::',cookies)
-    res.render('index.html',{token: decodeURI(cookies.nickname)})
+    res.render('index.html',{token:cookies.nickname})
+
 })
 router.use('/user', user)
 router.use('/board', board)
