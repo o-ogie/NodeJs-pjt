@@ -1,7 +1,9 @@
 const service = require('../services/boardService')
 
-exports.list = (req,res)=>{
-    res.render('board/list.html')
+exports.list = async (req,res)=>{
+    const list = await service.listBoard()
+    console.log(list)
+    res.render('board/list.html',{list})
 }
 
 exports.writeGet = (req,res)=>{
