@@ -14,4 +14,5 @@ router.use('/user', user)
 // router.use('/board', board)
 router.use('/admin', admin)
 
+
 module.exports = router
