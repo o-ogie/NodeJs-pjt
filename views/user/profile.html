@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="/css/user_profile.css">
+</head>
+<body>
+    <div id="header">
+        <h2>MY PROFILE</h2>
+    </div>
+    <div id="body">
+        <div id="body_left">
+            <p>이름 : {{user.user_name}}</p>
+            <p>아이디 : {{user.user_id}}</p>
+            <p>별명 : {{user.nickname}}</p>
+            <p>생일 : {{user.birth}}</p>
+            <p>성별 : {{user.gender}}</p>
+            <p>휴대폰번호 : {{user.phone}}</p>
+            <p>가입날짜 : {{user.date}}</p>
+        </div>
+        <div id="body_right">
+            <p>작성글</p>
+            <p>작성댓글</p>
+            <p>로그아웃</p>
+        </div>
+    </div>
+</body>
+</html>

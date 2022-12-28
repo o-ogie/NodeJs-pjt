@@ -10,9 +10,91 @@ ul, li {
 
 a{
     text-decoration: none;
+    color: dodgerblue;
+    font-size: 16px;
 }
 
+#header{
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    height: 40px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#header > i {
+    font-size: 24px;
+    font-weight: bold;
+}
+#login_form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1200px;
+    height: 350px;
+    margin: 0 auto;
+}
 
+#login_form > form {
+    margin-top: 250px;
+    border: 1px solid #ececec;
+    height: 450px;
+}
+
+#login_form > form > div > button{
+    width: 250px;
+    height: 40px;
+    color: #ffffff;
+    background: dodgerblue;
+    opacity: 75%;
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 35px 0;
+}
+
+#login_form > form > div {
+    display: flex;
+    width: 350px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+#login_form > form > div > input{
+    background-color : #ececec;
+    opacity: 65%;
+    width: 250px;
+    height: 40px;
+    color: grey;
+    padding: 5px 0 5px 5px;
+    box-sizing: border-box;
+    border : 0.5px solid grey;
+    border-radius: 3px;
+}
+
+#login_form > #login_test{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#login_form > #login_test > #login_bottom{
+    display: flex;
+    width: 350px;
+    height: 75px;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ececec;
+    background: #ffffff;
+}
+
+/* 
 #login_form > div {
     border : 1px solid #666;
     margin: auto;
@@ -53,4 +135,4 @@ a{
 
 #pw {
     padding : 0 10px 0 120px
-}
+} */

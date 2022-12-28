@@ -7,13 +7,28 @@ ul,li{
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 16px;
+}
+
+select{
+    width: 60px;
+}
+
 #header{
+    display: flex;
+    justify-content: center;
     width: 1200px;
     height: 40px;
+    padding-top: 20px;
+    box-sizing: border-box;
     margin: 0 auto;
 }
-#header > h3 {
-    text-align: center;
+#header > i {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 #body {
@@ -24,6 +39,61 @@ ul,li{
     margin: 0 auto;
 }
 
-#body > form > div {
+#body > form {
     margin-top: 50px;
+    border: 1px solid #ececec;
+}
+
+#body > form > div {
+    display: flex;
+    width: 350px;
+    margin-top: 50px;
+    justify-content: center;
+}
+#body > form > #btn_join{
+    margin-bottom: 50px;
+}
+
+#body > form > #btn_join > button {
+    width: 250px;
+    height: 40px;
+    color: #ffffff;
+    background: dodgerblue;
+    opacity: 75%;
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+#body > form > div > input {
+    background-color : #ececec;
+    opacity: 65%;
+    width: 250px;
+    height: 40px;
+    color: grey;
+    padding: 5px 0 5px 5px;
+    box-sizing: border-box;
+    border : 0.5px solid grey;
+    border-radius: 3px;
+}
+
+#body_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#body_bottom > #bottom_login{
+    display: flex;
+    width: 350px;
+    height: 75px;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ececec;
+    background: #ffffff;
 }
