@@ -7,11 +7,8 @@ const admin = require('./admin.route')
 
 
 router.get('/',(req,res)=>{
-    const {token} =req.cookies
-    const cookies = JSON.parse(token)
-
-    res.render('index.html',{token:cookies.nickname})
-
+    const cookies = req.cookies.token === '' ? undefined : JSON.parse(req.cookies.token).nickname
+    res.render('index.html', {token:cookies})
 })
 
 router.use('/user', user)
