@@ -26,8 +26,21 @@ exports.postJoin = async (req,res) => {
 }
 
 exports.getProfile = async (req,res) => {
-    const user_id = req.cookies.token
+    console.log(req.cookies.token)
+    const user_id = req.cookies.token.split(" ")
+                                    .map((k)=>k.split("="))
+                                    .reduce((acc,val)=>{
+                                        const [k,v] = val
+                                        acc[k] = v
+                                        return acc
+                                    },{})
+    console.log("profile user_id")
+    console.log(user_id)
+    console.log("profile user_id")
     const [user] = await userService.getUserProfile(user_id)
+    console.log("====profile user====")
+    console.log(user)
+    console.log("====profile user====")
     res.render("user/profile.html",{user})
 }
 

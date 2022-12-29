@@ -14,6 +14,9 @@ exports.getUserJoin = async ({user_id,user_pw,user_name,nickname,birth,gender,ph
 
 exports.getUserProfile = async (user_id) => {
     const userInfo = user_id
+    console.log("service user_id")
+    console.log(userInfo)
+    console.log("service user_id")
     const userProfile = await userRepository.userProfile(userInfo)
     return userProfile
 }
