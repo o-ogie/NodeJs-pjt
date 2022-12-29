@@ -13,8 +13,9 @@
             <td>글번호 {{view.idx}}</td>
             <td>글제목 {{view.subject}}</td>
             <td>글내용 {{view.content}}</td>
-            <button type="submit">수정하기</button>
         </tr>
     </table>
+    <button type="submit">수정하기</button>
+    <a href="/board/delete?idx={{view.idx}}">삭제</a>
 </body>
 </html>
