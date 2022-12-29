@@ -1,3 +1,4 @@
+const { modifyBoard } = require('../../../프로젝트/프로젝트/services/boardService')
 const board = require('../repository/boardRepository')
 
 exports.postWrite = async ({nickname, subject, content}) =>{
@@ -14,5 +15,16 @@ exports.viewBoard = async ({idx}) =>{
 
 exports.listBoard = async () => {
     const result = await board.viewAll()
+    return result
+}
+
+exports.modifyBoard = async (idx) => {
+    const result = await board.modifyOne(idx)
+    return result
+}
+
+exports.modifyBoardP = async (subject, content, idx) => {
+    const modifyInfo = {subject, content, idx}
+    const result = await board.modifyPost(modifyInfo)
     return result
 }

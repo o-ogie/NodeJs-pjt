@@ -2,7 +2,6 @@ const service = require('../services/boardService')
 
 exports.list = async (req,res)=>{
     const list = await service.listBoard()
-    console.log(list)
     res.render('board/list.html',{list})
 }
 
@@ -26,13 +25,20 @@ exports.writePost = async (req,res)=>{
 exports.view = async (req,res)=>{
     // const {idx, subject, content} = req.body
     const {idx} = req.query
-    console.log(idx)
     const [view] = await service.viewBoard({idx})
     res.render('board/view.html',{view})
 }
 
-exports.modify = (req,res)=>{
-    res.render('board/modify.html')
+exports.modifyGet = async (req,res)=>{
+    const {idx} = req.query
+    const [modifyGet] = await service.modifyBoard(idx)
+    res.render(`board/modify.html`,{modifyGet})
+}
+
+exports.modifyPost = async (req,res) => {
+    const {subject, content, idx} = req.body
+    const modifyPost = await service.modifyBoardP(subject, content, idx)
+    res.redirect(`/board/view?idx=${idx}`)
 }
 
 exports.delete = (req,res)=>{

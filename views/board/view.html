@@ -7,14 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form>
     <table>
         <tr>
             <td>글번호 {{view.idx}}</td>
             <td>글제목 {{view.subject}}</td>
             <td>글내용 {{view.content}}</td>
-            <button type="submit">수정하기</button>
+            <a href="/board/modify?idx={{view.idx}}">수정하기</a>
         </tr>
     </table>
+    </form>
 </body>
 </html>
