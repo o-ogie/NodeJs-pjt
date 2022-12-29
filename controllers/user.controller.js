@@ -1,3 +1,4 @@
+const { urlencoded } = require("body-parser");
 const userService = require("../services/user.service")
 
 
@@ -9,8 +10,14 @@ exports.postLogin = async (req,res,next) => {
     const {user_id,user_pw} = req.body
     const user = await userService.getUser({user_id,user_pw})
     if(user === undefined) return next(new Error("아이디와 패스워드가 일치하지 않습니다."))
-    res.setHeader("Set-Cookie",`token= id=${user.user_id} nickname=${user.nickname}; path=/;`)
-    res.redirect("/")
+    const token = {
+        id : user.user_id,
+        nickname: encodeURI(user.nickname)
+    }
+    const cookies = JSON.stringify(token)
+
+    res.setHeader("Set-Cookie",`token= ${cookies}; path=/;`)
+    res.redirect(`/`)
 }
 
 exports.getJoin = (req,res) => {
@@ -26,21 +33,9 @@ exports.postJoin = async (req,res) => {
 }
 
 exports.getProfile = async (req,res) => {
-    console.log(req.cookies.token)
-    const user_id = req.cookies.token.split(" ")
-                                    .map((k)=>k.split("="))
-                                    .reduce((acc,val)=>{
-                                        const [k,v] = val
-                                        acc[k] = v
-                                        return acc
-                                    },{})
-    console.log("profile user_id")
-    console.log(user_id)
-    console.log("profile user_id")
-    const [user] = await userService.getUserProfile(user_id)
-    console.log("====profile user====")
-    console.log(user)
-    console.log("====profile user====")
+
+    const cookies = JSON.parse(req.cookies.token)
+    const [user] = await userService.getUserProfile({id:cookies.id})
     res.render("user/profile.html",{user})
 }
 

@@ -5,12 +5,14 @@ exports.list = (req,res)=>{
 }
 
 exports.writeGet = (req,res)=>{
-    res.render('board/write.html')
+    const {token} = req.cookies
+
+    res.render('board/write.html',{nickname: JSON.parse(token).nickname})
 }
 
 exports.writePost = async (req,res)=>{
-    const {subject,content} = req.body;
-    const writePost = await service.postWrite({subject,content})
+    const {nickname, subject,content} = req.body;
+    const writePost = await service.postWrite({nickname, subject, content})
     res.redirect('/board/view')
 }
 
