@@ -2,9 +2,8 @@ const express = require('express')
 const router = express.Router()
 
 const user = require('./user.route')
-const board = require('./board.route')
+const board = require("./board/boardRoute")
 const admin = require('./admin.route')
-
 
 router.get('/',(req,res)=>{
     const {token} = req.cookies

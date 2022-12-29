@@ -6,7 +6,9 @@ const pool = mysql.createPool({
     user : "root",
     password : "tiajsrlf1!",
     database : "node",
-    connectionLimit : 5
+    connectionLimit : 5,
+    dateStrings : String
+    
 }).promise()
 
 module.exports = pool
