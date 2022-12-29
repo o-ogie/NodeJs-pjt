@@ -25,6 +25,21 @@ exports.viewAll = async ()=>{
     return result
 }
 
+
+exports.modifyOne = async(idx) =>{
+    const sql = `SELECT * FROM boardWrite WHERE idx=${idx}`
+    const [result] = await db.query(sql)
+    return result
+}
+
+exports.modifyPost = async(modifyInfo) => {
+    const payload = Object.entries(modifyInfo).map(([k,v]) => `"${v}"`).join(",")
+    const sql = `UPDATE boardWrite SET subject ='${modifyInfo.subject}', content ='${modifyInfo.content}' WHERE idx=${modifyInfo.idx}`
+    const [result] = await db.query(sql)
+    return result
+}
+
+
 exports.deleteOne = ({index}) => {
     const sql = `DELETE FROM board WHERE idx=${index};`
     db.query(sql)
@@ -46,3 +61,4 @@ const writeInfo = {
 }
 
 this.findAll({writeInfo})
+
