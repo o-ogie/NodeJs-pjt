@@ -7,11 +7,11 @@ exports.findAll = async ({writeInfo}) => {
     console.log('payload::::::',payload)
     const sql = `INSERT INTO board (writer, subject, content) VALUES (${payload})`
     db.query(sql)
-
     const sql2 = `SELECT * FROM board WHERE idx=(SELECT MAX(idx) FROM board)`
     const [result2] = await db.query(sql2)
     return result2
 }
+
 
 exports.findOne = async ({idx}) => {
     const sql = `SELECT * FROM board WHERE idx=${idx}`
