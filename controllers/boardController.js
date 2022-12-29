@@ -1,7 +1,9 @@
 const service = require('../services/boardService')
 
-exports.list = (req,res)=>{
-    res.render('board/list.html')
+exports.list = async (req,res)=>{
+    const list = await service.listBoard()
+    console.log(list)
+    res.render('board/list.html',{list})
 }
 
 exports.writeGet = (req,res)=>{
@@ -11,13 +13,22 @@ exports.writeGet = (req,res)=>{
 }
 
 exports.writePost = async (req,res)=>{
-    const {nickname, subject,content} = req.body;
-    const writePost = await service.postWrite({nickname, subject, content})
-    res.redirect('/board/view')
+    try{
+    const {subject,content} = req.body;
+    const [writePost] = await service.postWrite({subject,content})
+    // res.setHeader("Set-Cookie",`token=${writePost.idx}; path=/;`)
+    res.redirect(`/board/view?idx=${writePost.idx}`)
+    } catch (e) {
+        console.err
+    }
 }
 
-exports.view = (req,res)=>{
-    res.render('board/view.html')
+exports.view = async (req,res)=>{
+    // const {idx, subject, content} = req.body
+    const {idx} = req.query
+    console.log(idx)
+    const [view] = await service.viewBoard({idx})
+    res.render('board/view.html',{view})
 }
 
 exports.modify = (req,res)=>{
