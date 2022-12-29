@@ -15,7 +15,6 @@ exports.postLogin = async (req,res,next) => {
         nickname: encodeURI(user.nickname)
     }
     const cookies = JSON.stringify(token)
-
     res.setHeader("Set-Cookie",`token= ${cookies}; path=/;`)
     res.redirect(`/`)
 }
@@ -26,17 +25,24 @@ exports.getJoin = (req,res) => {
 
 exports.postJoin = async (req,res) => {
     const {user_id,user_pw,user_name,nickname,birth,gender,phone,tel} = req.body;
-    const user = await userService.getUserJoin({user_id,user_pw,user_name,nickname,birth,gender,phone,tel})
+    const [user] = await userService.getUserJoin({user_id,user_pw,user_name,nickname,birth,gender,phone,tel})
     console.log('req.body:::::::::::',req.body)
     console.log('user:::::::::::::::::',user)
-    res.redirect("/user/login")   
+    const token = {
+        id : user.user_id,
+        nickname : encodeURI(user.nickname)
+    }
+    const cookies = JSON.stringify(token)
+    res.setHeader("Set-Cookie",`token= ${cookies}; path=/;`)
+    res.redirect("/user/profile")
 }
 
 exports.getProfile = async (req,res) => {
-
+    console.log("getProfile",req.cookies)
     const cookies = JSON.parse(req.cookies.token)
     const [user] = await userService.getUserProfile({id:cookies.id})
     res.render("user/profile.html",{user})
+    
 }
 
 exports.logout = (req,res)=>{
