@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    modify page
+    <form method="post" action="/board/modify">
+        <input type="hidden" name="idx" value="{{modifyGet.idx}}">
+        <ul>
+            <li>글번호{{modifyGet.idx}}</li>
+            <li>글제목: <input type="text" name="subject" value="{{modifyGet.subject}}"></li>
+            <li><p>글내용</p><textarea name="content" id="content" cols="50" rows="10">{{modifyGet.content}}</textarea></li>
+        </ul>
+        <button type="submit">완료</button>
+    </form>
+    <script type="text/javascript" src="/js/board.js"></script>
 </body>
 </html>

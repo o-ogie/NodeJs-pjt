@@ -32,8 +32,17 @@ exports.view = async (req,res)=>{
     res.render('board/view.html',{view})
 }
 
-exports.modify = (req,res)=>{
-    res.render('board/modify.html')
+exports.modifyGet = async (req,res)=>{
+    
+    const {idx} = req.query
+    const [modifyGet] = await service.modifyBoard(idx)
+    res.render(`board/modify.html`,{modifyGet})
+}
+
+exports.modifyPost = async (req,res) => {
+    const {subject, content, idx} = req.body
+    const modifyPost = await service.modifyBoardP(subject, content, idx)
+    res.redirect(`/board/view?idx=${idx}`)
 }
 
 exports.delete = (req,res)=>{

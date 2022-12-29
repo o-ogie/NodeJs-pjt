@@ -10,9 +10,9 @@ router.get('/write', boardController.writeGet);
 
 router.post('/write', boardController.writePost);
 
-router.get('/modify', boardController.modify);
+router.get('/modify', boardController.modifyGet);
 
-router.post('/modify', boardController.modify);
+router.post('/modify', boardController.modifyPost);
 
 router.get("/delete",boardController.delete);
 
