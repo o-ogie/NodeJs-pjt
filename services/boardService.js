@@ -1,4 +1,4 @@
-const { modifyBoard } = require('../../../프로젝트/프로젝트/services/boardService')
+
 const board = require('../repository/boardRepository')
 
 exports.postWrite = async ({nickname, subject, content}) =>{

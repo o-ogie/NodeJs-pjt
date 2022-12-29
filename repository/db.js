@@ -5,7 +5,7 @@ const pool = mysql.createPool({
     port : "3306",
     user : "jung",
     password : "jung",
-    database : "jung",
+    database : "node",
     connectionLimit : 5,
     dateStrings : String
 }).promise()

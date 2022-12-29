@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
     <table>
         <tr>
             <th>번호</th>
@@ -20,40 +19,5 @@
         </tr>
         {% endfor %}
     </table>
-=======
-
-    <div>
-        <h1>
-            <a href="/">Logo</a>
-        </h1>
-    </div>
-
-    <div id="wrap">
-
-        <div id="list">
-            <table>
-                <tr>
-                    <td>번호</td>
-                    <td>제목</td>
-                    <td>작성자</td>
-                    <td>작성일</td>
-                    <td>조회수</td>
-                </tr>
-
-                {% for item in list %}
-                <tr>
-                    <td>{{loop.index}}}</td>
-                    <td>{{item.subject}}</td>
-                    <td>{{item.writer}}</td>
-                    <td>{{item.date}}</td>
-                    <td>{{item.hit}}</td>
-                </tr>
-                {% endfor %}                
-            </table>
-        </div>
-        <a href="/board/write">글쓰기</a>
-    </div>
-
->>>>>>> main
 </body>
 </html>

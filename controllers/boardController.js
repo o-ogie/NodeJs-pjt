@@ -30,6 +30,7 @@ exports.view = async (req,res)=>{
 }
 
 exports.modifyGet = async (req,res)=>{
+    
     const {idx} = req.query
     const [modifyGet] = await service.modifyBoard(idx)
     res.render(`board/modify.html`,{modifyGet})
