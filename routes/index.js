@@ -13,6 +13,7 @@ router.get('/',(req,res)=>{
     res.render('index.html',{token:cookies.nickname})
 
 })
+
 router.use('/user', user)
 router.use('/board', board)
 router.use('/admin', admin)

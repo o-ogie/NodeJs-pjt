@@ -136,3 +136,28 @@ vertical-align: top;
     right: 50px;
     bottom: 50px;
 }
+
+/* css */
+.fade-class-left {
+    position: relative;
+    left: 200px;
+    opacity: 0;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s linear;
+}
+.fade-in-left {
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s linear;
+    left: 0px;
+    opacity: 1;
+}
+
+.fade-class-right {
+    position: relative;
+    right: 200px;
+    opacity: 0;
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s linear;
+}
+.fade-in-right {
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s linear;
+    right: 0px;
+    opacity: 1;
+}

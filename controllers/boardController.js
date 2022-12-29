@@ -7,16 +7,7 @@ exports.list = (req,res)=>{
 exports.writeGet = (req,res)=>{
     const {token} = req.cookies
 
-    const cookies = token
-                        .split(' ')
-                        .map(v=>v.split('='))
-                        .reduce((acc,val)=>{
-                            const [k,v] = val
-                            acc[k] = v
-                            return acc
-                        }, {})
-
-    res.render('board/write.html',{nickname: cookies.nickname})
+    res.render('board/write.html',{nickname: JSON.parse(token).nickname})
 }
 
 exports.writePost = async (req,res)=>{
