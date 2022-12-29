@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="/css/user_profile.css">
+</head>
+<body>
+    <div id="header">
+        <i>PROFILE</i>
+    </div>
+    <div id="body">
+        <div id="body_left">
+            <h2>" {{user.nickname}} "님 반갑습니다.</h2>
+            <div id="left_p">
+                <p>이름 : {{user.user_name}}</p>
+                <p>아이디 : {{user.user_id}}</p>
+                <p>생일 : {{user.birth}}</p>
+                <p>성별 : {{user.gender}}</p>
+                <p>휴대폰번호 : {{user.phone}}</p>
+                <p>가입날짜 : {{user.date}}</p>
+            </div>
+        </div>
+        <div id="body_right">
+            <div id="right_p">
+                <button type="button" onclick='location.href="/";'>메인화면 가기</button>
+                <button type="button" onclick='location.href="/board/list";'>게시판 가기</button>
+                <button type="button" onclick='location.href="/board/list";'>작성한 글 보기</button>
+                <button type="button" onclick='location.href="/user/logout";'>로그아웃</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

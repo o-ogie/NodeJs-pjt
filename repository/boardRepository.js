@@ -1,6 +1,8 @@
 const db = require('./db')
 
 exports.findAll = async (writeInfo) => {
+
+    // 게시글 POST query
     const payload = Object.entries(writeInfo).map(([k,v]) => `"${v}"`).join(",")
     const sql = `INSERT INTO boardWrite (subject, content) VALUES (${payload})`
     const [result] = await db.query(sql)

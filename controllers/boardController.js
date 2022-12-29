@@ -7,7 +7,9 @@ exports.list = async (req,res)=>{
 }
 
 exports.writeGet = (req,res)=>{
-    res.render('board/write.html')
+    const {token} = req.cookies
+
+    res.render('board/write.html',{nickname: JSON.parse(token).nickname})
 }
 
 exports.writePost = async (req,res)=>{

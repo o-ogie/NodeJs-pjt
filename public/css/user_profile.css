@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    height: 40px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#header > i {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+#body {
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#body > #body_left {
+    float: left;
+    width: 600px;
+    height: 400px;
+}
+
+#body > #body_left > h2{
+    font-size: 24px;
+    padding: 30px 0 30px 30px;
+    font-weight: bold;
+    color: dodgerblue;
+}
+
+#body > #body_left > #left_p {
+    width: 500px;
+    background-color : #ececec;
+    opacity: 65%;
+    color: grey;
+    margin-left: 30px;
+    border : 0.5px solid grey;
+    border-radius: 3px;
+}
+
+#body > #body_left > #left_p > p {
+    display: block;
+    width: 250px;
+    height: 45px;
+    margin: 10px 0 0 10px;
+    color: dodgerblue;
+}
+
+#body > #body_right {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+}
+
+#body > #body_right > #right_p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 335px;
+    background-color : #ececec;
+    opacity: 65%;
+    color: grey;
+    margin-left: 30px;
+    margin-top: 88.5px;
+    border : 0.5px solid grey;
+    border-radius: 3px;
+}
+
+#body > #body_right > #right_p > button {
+    display: block;
+    width: 250px;
+    height: 45px;
+    margin-top: 30px;
+    color: dodgerblue;
+}
+
+#body > #body_right > #right_p > button:hover{
+    background: #ffaaff;
+    cursor: pointer;
+}
