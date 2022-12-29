@@ -28,7 +28,6 @@ exports.postJoin = async (req,res) => {
     const [user] = await userService.getUserJoin({user_id,user_pw,user_name,nickname,birth,gender,phone,tel})
     console.log('req.body:::::::::::',req.body)
     console.log('user:::::::::::::::::',user)
-
     const token = {
         id : user.user_id,
         nickname : encodeURI(user.nickname)
