@@ -16,3 +16,7 @@ exports.listBoard = async () => {
     const result = await board.viewAll()
     return result
 }
+
+exports.deleteBoard = ({index}) => {
+    board.deleteOne({index})
+}

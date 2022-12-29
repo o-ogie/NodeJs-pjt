@@ -2,7 +2,6 @@ const service = require('../services/boardService')
 
 exports.list = async (req,res)=>{
     const list = await service.listBoard()
-    console.log(list)
     res.render('board/list.html',{list})
 }
 
@@ -36,5 +35,7 @@ exports.modify = (req,res)=>{
 }
 
 exports.delete = (req,res)=>{
-    // res.send('delete complete')
+    const index = req.query.idx
+    service.deleteBoard({index})
+    res.redirect('/board/list')
 }
