@@ -2,7 +2,9 @@ const board = require('../repository/boardRepository')
 
 exports.postWrite = async ({nickname, subject, content}) =>{
     const writeInfo = {nickname, subject, content}
-    const result = await board.findAll(writeInfo)
+    console.log(writeInfo)
+    const [result] = await board.findAll({writeInfo})
+    console.log(result)
     return result
 }
 
@@ -19,4 +21,8 @@ exports.listBoard = async () => {
 
 exports.deleteBoard = ({index}) => {
     board.deleteOne({index})
+}
+
+exports.hitCount = ({idx,hit})=>{
+    board.hitCount({idx,hit})
 }

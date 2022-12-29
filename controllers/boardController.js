@@ -13,9 +13,10 @@ exports.writeGet = (req,res)=>{
 
 exports.writePost = async (req,res)=>{
     try{
-    const {subject,content} = req.body;
-    const [writePost] = await service.postWrite({subject,content})
-    // res.setHeader("Set-Cookie",`token=${writePost.idx}; path=/;`)
+    const {nickname, subject, content} = req.body;
+    console.log('sub,cont',subject,content)
+    const writePost = await service.postWrite({nickname, subject,content})
+    console.log('writePost:::::::::::',writePost)
     res.redirect(`/board/view?idx=${writePost.idx}`)
     } catch (e) {
         console.err
@@ -25,8 +26,9 @@ exports.writePost = async (req,res)=>{
 exports.view = async (req,res)=>{
     // const {idx, subject, content} = req.body
     const {idx} = req.query
-    console.log(idx)
     const [view] = await service.viewBoard({idx})
+    const hit = ++(view.hit)
+    service.hitCount({idx,hit})
     res.render('board/view.html',{view})
 }
 
