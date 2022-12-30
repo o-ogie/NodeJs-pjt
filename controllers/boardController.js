@@ -7,19 +7,22 @@ exports.list = async (req,res)=>{
 
 exports.writeGet = (req,res)=>{
     const {token} = req.cookies
-
     res.render('board/write.html',{nickname: JSON.parse(token).nickname})
 }
 
 exports.writePost = async (req,res)=>{
     try{
     const {nickname, subject, content} = req.body;
+    if (subject === ''){
+        res.send(`<script type="text/javascript">alert("제목을 입력해주세요")
+        location.href="/board/write"</script>`)
+    }
     console.log('sub,cont',subject,content)
     const writePost = await service.postWrite({nickname, subject,content})
     console.log('writePost:::::::::::',writePost)
     res.redirect(`/board/view?idx=${writePost.idx}`)
     } catch (e) {
-        console.err
+    console.err
     }
 }
 
@@ -39,7 +42,6 @@ exports.view = async (req,res)=>{
         bool
     }
     console.log('token:::::',token)
-
     res.render('board/view.html',{token})
 }
 
