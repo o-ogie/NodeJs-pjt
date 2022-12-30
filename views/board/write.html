@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body>   
+    <div id="wrap">
+        <div id="user">
+            {% if nick %}
+            {{nick.nickname}}님 어서오세요.
+                <a href="/user/logout">로그아웃</a>
+                <a href="/user/profile">내 정보</a>
+            {% else %}
+                <a href="/user/login">로그인</a>
+                <a href="/user/join">회원가입</a>
+            {% endif %}
+        </div>
+    <div>
+        <h1 id="Logo">
+            <a href="/">Logo</a>
+        </h1>
+    </div>
     <form method="post" action="/board/write">
         <ul>
             <li>작성자 : {{nickname}} <input type="hidden" name="nickname" value="{{nickname}}"></li>

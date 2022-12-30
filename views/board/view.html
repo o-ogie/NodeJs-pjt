@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="wrap">
+        <div id="user">
+            {% if token.cookies %}
+            {{token.cookies.nickname}}님 어서오세요.
+            <a href="/user/logout">로그아웃</a>
+            <a href="/user/profile">내 정보</a>
+            {% endif %}
+        </div>
+        <div>
+            <h1 id="Logo">
+                <a href="/">Logo</a>
+            </h1>
+        </div>
+    </div>
     <table>
         <tr>
             <td>글번호 {{token.view.idx}}</td>

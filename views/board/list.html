@@ -7,33 +7,52 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h1>
-            <a href="/">Logo</a>
-        </h1>
-    </div>
     <div id="wrap">
-        <div id="list">
-            <table>
-                <tr>
-                    <td>번호</td>
-                    <td>제목</td>
-                    <td>작성자</td>
-                    <td>작성일</td>
-                    <td>조회수</td>
-                </tr>
-                {% for item in list %}
-                <tr>
-                    <td>{{list.length - loop.index0}}</td>
-                    <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
-                    <td>{{item.writer}}</td>
-                    <td>{{item.date}}</td>
-                    <td>{{item.hit}}</td>
-                </tr>
-                {% endfor %}                
-            </table>
+        <div id="header">
+            <div id="header_logoinfo">
+                <div id="user">
+                    {% if token %}
+                    {{token.nickname}}님 어서오세요.
+                    <a href="/user/logout">로그아웃</a>
+                    <a href="/user/profile">내 정보</a>
+                    {% endif %}
+                </div>
+                <div>
+                    <h1 id="Logo">
+                        <a href="/">Logo</a>
+                    </h1>
+                </div>
+            </div>
         </div>
-        <a href="/board/write">글쓰기</a>
+        <div id="content_wrap">
+            <div id="content">
+                <div id="content_head">
+                    <a href="board/list">전체게시물</a>
+                </div>
+                    <table>
+                        <tr>
+                            <td>번호</td>
+                            <td>제목</td>
+                            <td>작성자</td>
+                            <td>작성일</td>
+                            <td>조회수</td>
+                        </tr>
+                        {% for item in list %}
+                        <tr>
+                            <td>{{list.length - loop.index0}}</td>
+                            <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
+                            <td>{{item.writer}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.hit}}</td>
+                        </tr>
+                        {% endfor %}                
+                    </table>
+                </div>
+                <div id="content_footer">
+                    <a href="/board/write">글쓰기</a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

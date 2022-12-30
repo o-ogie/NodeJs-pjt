@@ -2,12 +2,15 @@ const service = require('../services/boardService')
 
 exports.list = async (req,res)=>{
     const list = await service.listBoard()
-    res.render('board/list.html',{list})
+    const token = JSON.parse(req.cookies.token)
+    console.log(token.nickname)
+    res.render('board/list.html',{list,token})
 }
 
 exports.writeGet = (req,res)=>{
     const {token} = req.cookies
-    res.render('board/write.html',{nickname: JSON.parse(token).nickname})
+    const nick = JSON.parse(req.cookies.token)
+    res.render('board/write.html',{nickname: JSON.parse(token).nickname, nick})
 }
 
 exports.writePost = async (req,res)=>{
@@ -30,7 +33,6 @@ exports.view = async (req,res)=>{
     // const {idx, subject, content} = req.body
     const cookies = JSON.parse(req.cookies.token)
     const nick = cookies.nickname
-    console.log(nick)
     const {idx} = req.query
     const [view] = await service.viewBoard({idx})
     const hit = ++(view.hit)
@@ -39,9 +41,10 @@ exports.view = async (req,res)=>{
     const bool = nick == view.writer
     const token = {
         view,
-        bool
+        bool,
+        cookies
     }
-    console.log('token:::::',token)
+    console.log('token:::::',token.cookies)
     res.render('board/view.html',{token})
 }
 
