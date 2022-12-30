@@ -25,23 +25,33 @@ exports.writePost = async (req,res)=>{
 
 exports.view = async (req,res)=>{
     // const {idx, subject, content} = req.body
+    const cookies = JSON.parse(req.cookies.token)
+    const nick = cookies.nickname
+    console.log(nick)
     const {idx} = req.query
     const [view] = await service.viewBoard({idx})
     const hit = ++(view.hit)
     service.hitCount({idx,hit})
-    res.render('board/view.html',{view})
+    console.log(nick, view.writer)
+    const bool = nick == view.writer
+    const token = {
+        view,
+        bool
+    }
+    console.log('token:::::',token)
+
+    res.render('board/view.html',{token})
 }
 
 exports.modifyGet = async (req,res)=>{
-    
     const {idx} = req.query
     const [modifyGet] = await service.modifyBoard(idx)
     res.render(`board/modify.html`,{modifyGet})
 }
 
 exports.modifyPost = async (req,res) => {
-    const {subject, content, idx} = req.body
-    const modifyPost = await service.modifyBoardP(subject, content, idx)
+    const {idx, writer, subject, content, date, hit} = req.body
+    const modifyPost = await service.modifyBoardP(idx, writer, subject, content, date, hit)
     res.redirect(`/board/view?idx=${idx}`)
 }
 
