@@ -19,12 +19,8 @@ a {
 
 #user {
     float:right;
+    padding:30px 3px 3px 3px;
 }
-
-#user > a {
-    padding:3px;
-}
-
 
 .qck_menu {
     position : fixed;
@@ -62,53 +58,50 @@ a {
     padding: 20px;
 }
 
-.kind_wrap {
-    border:2px solid black; 
-    width:100%; 
-    max-width:1200px; 
-    margin:0 auto; 
+/* 슬라이드 */
+
+#slider { 
     position: relative;
-}
-.kind_wrap > .kind_slider {
-overflow: hidden;
-}
-.kind_wrap > .kind_slider .slider { 
-position: relative; 
-transition: 0.5s;
-}
-.kind_wrap > .kind_slider .slider li {
-float:left;
-}
-.kind_wrap > .kind_slider img {
-vertical-align: top;
+    width: 100%;
+    margin: 0 auto;
+    height: 450px;
+    overflow: hidden;
 }
 
-#arrow_box {
-    height: 20px;
+#slides {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-.arrow {
-    height: 100%;
-    float: right;
-  }
-
-.arrow > a {
-    padding: 10px;
+.animated {
+    transition: 0.5s ease-out;
 }
 
-.arrow > a.prev {
-    /* position: absolute;  */
-    /* left:-50px; 
-    top:100px; */
-    /* right: 150px; */
-    font-size: 30px;
-  }
-.arrow > a.next {
-    /* position: absolute;  */
-    /* right:-50px; 
-    top:100px; */
-    font-size: 30px;
-  }
+#slides > li {
+    width: 1200px;
+    height: 450px;
+    float: left;
+}
+
+#slides li:not(:last-child){
+    margin-right: 30px;
+}
+
+#next, #prev {
+    cursor: pointer;
+}
+
+/*슬라이드 버튼*/
+
+.controls > span {
+
+}
+
+
+
+/* 슬라이드 */
+
 
 #content {
     width: 100%;
@@ -137,7 +130,7 @@ vertical-align: top;
     bottom: 50px;
 }
 
-/* css */
+/* fade효과 */
 .fade-class-left {
     position: relative;
     left: 200px;

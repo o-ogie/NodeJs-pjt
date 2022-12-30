@@ -27,14 +27,14 @@ exports.viewAll = async ()=>{
 
 
 exports.modifyOne = async(idx) =>{
-    const sql = `SELECT * FROM boardWrite WHERE idx=${idx}`
+    const sql = `SELECT * FROM board WHERE idx=${idx}`
     const [result] = await db.query(sql)
     return result
 }
 
 exports.modifyPost = async(modifyInfo) => {
     const payload = Object.entries(modifyInfo).map(([k,v]) => `"${v}"`).join(",")
-    const sql = `UPDATE boardWrite SET subject ='${modifyInfo.subject}', content ='${modifyInfo.content}' WHERE idx=${modifyInfo.idx}`
+    const sql = `UPDATE board SET subject ='${modifyInfo.subject}', content ='${modifyInfo.content}' WHERE idx=${modifyInfo.idx}`
     const [result] = await db.query(sql)
     return result
 }
@@ -54,11 +54,5 @@ exports.hitCount = async({idx,hit})=>{
     db.query(sql)
 }
 
-const writeInfo = {
-    nickname : '우기',
-    subject : 'ㅎㅇ',
-    content : 'ㅎㅇ'
-}
 
-this.findAll({writeInfo})
 
