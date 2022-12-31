@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/css/boardList.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <div id="wrap">
@@ -12,16 +13,14 @@
             <div id="header_logoinfo">
                 <div id="user">
                     {% if token %}
-                    {{token.nickname}}님 어서오세요.
+                    <span>{{token.nickname}}님 어서오세요.</span>
                     <a href="/user/logout">로그아웃</a>
                     <a href="/user/profile">내 정보</a>
                     {% endif %}
                 </div>
-                <div>
-                    <h1 id="Logo">
-                        <a href="/">Logo</a>
-                    </h1>
-                </div>
+                <h1 id="Logo">
+                    <a href="/">Logo</a>
+                </h1>
             </div>
         </div>
         <div id="content_wrap">
@@ -29,29 +28,30 @@
                 <div id="content_head">
                     <a href="board/list">전체게시물</a>
                 </div>
-                    <table>
-                        <tr>
-                            <td>번호</td>
-                            <td>제목</td>
-                            <td>작성자</td>
-                            <td>작성일</td>
-                            <td>조회수</td>
-                        </tr>
-                        {% for item in list %}
-                        <tr>
-                            <td>{{list.length - loop.index0}}</td>
-                            <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
-                            <td>{{item.writer}}</td>
-                            <td>{{item.date}}</td>
-                            <td>{{item.hit}}</td>
-                        </tr>
-                        {% endfor %}                
-                    </table>
-                </div>
-                <div id="content_footer">
-                    <a href="/board/write">글쓰기</a>
-                </div>
-            </div>
+                    <div id="contentList">
+                        <table class="contentTable" >
+                            <tr class="contentTable_header">
+                                <td>번호</td>
+                                <td>제목</td>
+                                <td>작성자</td>
+                                <td>작성일</td>
+                                <td>조회수</td>
+                            </tr>
+                            {% for item in list %}
+                            <tr class="contentList_content">
+                                <td>{{list.length - loop.index0}}</td>
+                                <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
+                                <td>{{item.writer}}</td>
+                                <td>{{item.date}}</td>
+                                <td>{{item.hit}}</td>
+                            </tr>
+                            {% endfor %}                
+                        </table>
+                        <div id="content_footer">
+                            <a href="/board/write"><img src="https://image.ygosu.com/images/btn_write.gif" alt="글쓰기"></a>
+                        </div>
+                    </div>    
+            </div>    
         </div>
     </div>
 </body>
