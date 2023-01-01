@@ -14,19 +14,15 @@ exports.writeGet = (req,res)=>{
 }
 
 exports.writePost = async (req,res)=>{
-    try{
+
     const {nickname, subject, content} = req.body;
     if (subject === ''){
         res.send(`<script type="text/javascript">alert("제목을 입력해주세요")
         location.href="/board/write"</script>`)
-    }
-    console.log('sub,cont',subject,content)
+    } else { 
     const writePost = await service.postWrite({nickname, subject,content})
-    console.log('writePost:::::::::::',writePost)
     res.redirect(`/board/view?idx=${writePost.idx}`)
-    } catch (e) {
-    console.err
-    }
+    } 
 }
 
 exports.view = async (req,res)=>{
