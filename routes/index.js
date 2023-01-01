@@ -6,8 +6,6 @@ const board = require('./board/boardRoute')
 const admin = require('./admin.route')
 
 router.get('/',(req,res)=>{
-
-    console.log("req.cookies:::",req.cookies)
     const cookies = req.cookies.token === '' ? undefined : JSON.parse(req.cookies.token).nickname
     res.render('index.html', {token:cookies})
 })
