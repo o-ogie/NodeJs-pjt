@@ -3,8 +3,12 @@ const service = require('../services/boardService')
 exports.list = async (req,res)=>{
     const list = await service.listBoard()
     const token = JSON.parse(req.cookies.token)
-    console.log(token.nickname)
-    res.render('board/list.html',{list,token})
+    if (token !== '') {
+        res.render('board/list.html',{list,token})
+    } else {
+    res.send(`<script type="text/javascript">alert("로그인이 필요합니다")
+    location.href="/index.html"</script>`)
+    }
 }
 
 exports.writeGet = (req,res)=>{
