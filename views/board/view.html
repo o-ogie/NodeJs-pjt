@@ -13,10 +13,10 @@
             <td>글번호 {{view.idx}}</td>
             <td>글제목 {{view.subject}}</td>
             <td>글내용 {{view.content}}</td>
-
         </tr>
     </table>
-    <button type="submit">수정하기</button>
+    <a href="/board/modify?idx={{view.idx}}">수정하기</a>
     <a href="/board/delete?idx={{view.idx}}">삭제</a>
+    <a href="/board/list">목록</a>
 </body>
 </html>

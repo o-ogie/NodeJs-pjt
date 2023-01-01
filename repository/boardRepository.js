@@ -54,11 +54,5 @@ exports.hitCount = async({idx,hit})=>{
     db.query(sql)
 }
 
-const writeInfo = {
-    nickname : '우기',
-    subject : 'ㅎㅇ',
-    content : 'ㅎㅇ'
-}
 
-this.findAll({writeInfo})
 
