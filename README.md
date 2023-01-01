@@ -16,9 +16,9 @@
 
 ## 팀 구성 
 
-- 세욱 : (https://github.com/o-ogie)<br><br>
+- 세욱 : Main page 및 BOARD,USER부분 BACK-END 지원을 하였습니다.(https://github.com/o-ogie)<br><br>
 
-- 정민 : (https://github.com/jungjeongml)<br><br>
+- 정민 : BOARD 관련된 부분을 맡아 진행하였습니다.(https://github.com/jungjeongml)<br><br>
 
 - 홍태 : USER 관련된 부분(Login,Join,Profile)을 맡아 진행하였습니다. (https://github.com/ambious12)<br><br>
 
