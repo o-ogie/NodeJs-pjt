@@ -9,13 +9,101 @@ ul,li{
 
 a{
     text-decoration: none;
-    color: dodgerblue;
+    color: black;
     font-size: 16px;
 }
-
-select{
-    width: 60px;
+/* 백그라운드 부분 */
+.container{
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: AnimationName 15s ease infinite;
+    width: 100%;
+    /* height: 100vh; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 35%;
+    text-align: center; */
+    -webkit-animation: AnimationName 16s ease infinite;
+    -moz-animation: AnimationName 16s ease infinite;
+    -o-animation: AnimationName 16s ease infinite;
+    animation: AnimationName 16s ease infinite;
 }
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* 백그라운드 부분 */
+
+/*inputBox label 꾸미기*/
+.labelTest{
+    position: relative;
+    width: 300px;
+    height: 45px;
+    margin-bottom: 35px;
+}
+
+.labelTest:last-child{
+    margin-bottom: 0;
+}
+
+.labelTest > input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #111;
+    background : transparent;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 12px;
+    color: #111;
+    font-weight: 300;
+}
+
+.labelTest > span {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    padding: 10px;
+    display: inline-block;
+    font-size: 12px;
+    color: #111;
+    font-weight: 300;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.labelTest input:focus ~ span,
+.labelTest input:valid ~ span{
+    transform : translate(-10px,-32px);
+    font-size:12px;
+}
+
+/*inputBox label 꾸미기*/
+
 
 #header{
     display: flex;
@@ -44,13 +132,17 @@ select{
     border: 1px solid #ececec;
 }
 
-#body > form > div {
+#body > form > div{
     display: flex;
-    width: 350px;
+    width: 400px;
     margin-top: 50px;
-    justify-content: center;
+    margin-left: 150px;
+    /* justify-content: center; */
 }
+
 #body > form > #btn_join{
+    display: block;
+    left: 200px;
     margin-bottom: 50px;
 }
 
@@ -66,6 +158,68 @@ select{
     font-weight: bold;
 
 }
+
+#div_date > label {
+    width: 100px;
+    text-align: center;
+}
+
+#div_date > span {
+    font-family: "Noto Sansf KR", sans-serif;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 1.5;
+    color: #444;
+}
+
+#div_gender {
+    align-items: center;
+}
+
+#div_gender > span{
+    font-family: "Noto Sansf KR", sans-serif;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* Select Box 꾸미기*/
+select{
+    appearance: none;
+    font-family: "Noto Sansf KR", sans-serif;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 1.5;
+
+    color: #444;
+    background-color: #fff;
+
+    padding: 0.3em 0.7em 0.25em 0.4em;
+    margin: 0;
+
+    border: 1px solid #aaa;
+    border-radius:0.5em;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+}
+
+select:hover {
+    border-color:#888;
+}
+
+select:focus {
+    border-color:#aaa;
+    box-shadow:0 0 1px 3px rgba(59,153,252,0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+
+select:disabled {
+    opacity:0.5;
+}
+
+/* Select Box 꾸미기*/
 
 #body > form > div > input {
     background-color : #ececec;
@@ -96,4 +250,8 @@ select{
     align-items: center;
     border: 1px solid #ececec;
     background: #ffffff;
+}
+
+#body_bottom > #bottom_login > span {
+    color: dodgerblue;   
 }

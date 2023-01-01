@@ -10,9 +10,54 @@ ul, li {
 
 a{
     text-decoration: none;
-    color: dodgerblue;
+    color: black;
     font-size: 16px;
 }
+
+/* 로그인 배경 애니메이션 */
+
+
+.container{
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: AnimationName 15s ease infinite;
+    width: 100%;
+    /* height: 100vh; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 35%;
+    text-align: center; */
+    -webkit-animation: AnimationName 16s ease infinite;
+    -moz-animation: AnimationName 16s ease infinite;
+    -o-animation: AnimationName 16s ease infinite;
+    animation: AnimationName 16s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* 로그인 배경 애니메이션 */
 
 #header{
     display: flex;
@@ -90,8 +135,12 @@ a{
     margin-top: 15px;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ececec;
-    background: #ffffff;
+    border: 1px solid #ffffff;
+    background: #ececec;
+}
+
+#login_form > #login_test > #login_bottom > span{
+    color: dodgerblue;
 }
 
 /* 

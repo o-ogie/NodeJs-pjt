@@ -14,9 +14,9 @@ exports.writeGet = (req,res)=>{
 exports.writePost = async (req,res)=>{
     try{
     const {nickname, subject, content} = req.body;
-    console.log('sub,cont',subject,content)
+    // console.log('sub,cont',subject,content)
     const writePost = await service.postWrite({nickname, subject,content})
-    console.log('writePost:::::::::::',writePost)
+    // console.log('writePost:::::::::::',writePost)
     res.redirect(`/board/view?idx=${writePost.idx}`)
     } catch (e) {
         console.err
