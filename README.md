@@ -8,7 +8,7 @@
 - 로그인 회원가입을 하여 게시글을 작성할수있는 웹페이지 입니다.<br><br>
 - 작업기간 : 22.12.26 ~ 22.12.31 (총6일)<br><br>
 - 사용기술 : <br>
-&nbsp;1. Front-End : HTML, CSS, JavaScript
+&nbsp;1. Front-End : HTML, CSS, JavaScript<br><br>
 &nbsp;2. Back-End : Node.js, MYSQL,Express<br><br>
 - 진행방식 : 각자 한파트씩 맡아 진행하였으며 매일 5시 전으로 <br><br>
 모여서 코드리뷰를 진행하였습니다. 
