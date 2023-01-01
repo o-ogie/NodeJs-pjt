@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simple is the best</title>
     <link href="/css/index.css" rel="stylesheet">
-    
 </head>
 <body>
 
@@ -45,35 +44,44 @@
         </div>
 
         <!-- Slide -->
-        <div class="kind_wrap">
-            <div class="kind_slider">
-              <ul class="slider">
-                    <li id="slide1">
+        <div id="slide_wrap">
+            <div id="slider">
+                <ul id="slides">
+                    <li>
                         <img src="https://health.chosun.com/site/data/img_dir/2022/08/12/2022081201989_0.jpg" style="width:1200px; height:450px;" alt="">
                     </li>
-                    <li id="slide2">
+                    <li>
                         <img src="https://img.freepik.com/premium-photo/traditional-food-chicken-soup-with-ginseng_1205-8408.jpg?w=2000" style="width:1200px; height:450px;" alt="">
                     </li>
-                    <li id="slide3">
+                    <li>
                         <img src="https://img.freepik.com/free-photo/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish_1150-42988.jpg?w=2000&t=st=1672205001~exp=1672205601~hmac=8745d7715a12f23e211f1d40c48f231cd1d87b88a2f3dd3c7da8abffb7d243d5" 
                         style="width:1200px; height:450px;", alt="">
+                    </li>
+                    <li>
+                        <img src="/images/skrrrrr.jpg" style="width:600px; height:450px;" alt="">
                     </li>
                 </ul>
             </div>
             <!-- <progress class="progressTag" value="100" max="100"> 나중에. -->
         </div>
-        <div id="arrow_box">
-            <div class="arrow">
-                <a href="" class="prev"><</a>
-                <a href="" class="next">></a>
+
+
+        <div id="control_box">
+            <div class="controls">
+                <span id="prev">prev</span>
+                <span id="next">next</span>
             </div>
         </div>
+        
         
 
 
         <div id="content">
             <div>
-                <div class="pic">공지사진</div>
+                <div class="pic">
+                    <!-- <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F994654475D15070D05"  -->
+                    <!-- style="width:600px; height:300px;" alt=""> -->
+                </div>
                 <div class="fade-class-left">
                     <div class="categori">
                         <div class="text">
@@ -86,11 +94,14 @@
                 <div class="fade-class-right">
                     <div class="categori">
                         <div class="text">
-                            <h1><a href="/board/list">커뮤니티</a></h1>
+                            <h1><a id='community' href="/board/list">커뮤니티</a></h1>
                         </div>
                     </div>
                 </div>
-                <div class="pic">커뮤사진</div>
+                <div class="pic">
+                    <img src="/images/ddoonge.png"
+                     alt="">
+                </div>
             </div>
         </div>
         

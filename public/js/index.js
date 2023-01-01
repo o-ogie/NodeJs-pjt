@@ -10,6 +10,7 @@ let currentIndex = 0
     timer = undefined
 
 
+    console.log(slides, slide, prevBtn, nextBtn)
 
 const makeClone = () => {
 
@@ -89,7 +90,7 @@ const stopSlide = () => {
 makeClone()
 autoSlide()
 
-
+// ------------------------------------------------------------
 const targets_l = document.querySelectorAll(".fade-class-left")
 const targets_r = document.querySelectorAll(".fade-class-right")
 const options = { root: null, threshold: 0.1, rootMargin: "-0px" }
