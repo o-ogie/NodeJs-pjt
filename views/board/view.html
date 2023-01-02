@@ -5,18 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/css/boardView.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <form>
-    <table>
-        <tr>
-            <td>글번호 {{view.idx}}</td>
-            <td>글제목 {{view.subject}}</td>
-            <td>글내용 {{view.content}}</td>
-        </tr>
-    </table>
-    <a href="/board/modify?idx={{view.idx}}">수정하기</a>
-    <a href="/board/delete?idx={{view.idx}}">삭제</a>
-    <a href="/board/list">목록</a>
+<<<<<<< HEAD
+    <div id="wrap">
+        <div id="header">
+            <div id="header_logoinfo">
+                <div id="user">
+                    {% if token %}
+                    <span>{{token.view.writer}}님 어서오세요.</span>
+                    <a href="/user/logout">로그아웃</a>
+                    <a href="/user/profile">내 정보</a>
+                    {% endif %}
+                </div>
+                <h1 id="Logo">
+                    <a href="/">Logo</a>
+                </h1>
+            </div>
+        </div>
+        <div id="content_wrap">
+            <div id="content">
+                <div id="content_head">
+                    <a href="/board/list">전체게시물</a>
+                </div>
+                    <div id="contentList">
+                            <table class="contentTable">
+                                <tr class="contentTable_header">
+                                    <td>번호 {{token.view.idx}}</td>
+                                    <td>{{token.view.subject}}</td>
+                                    <!-- <td>글내용 {{token.view.content}}</td> -->
+                                    <td>작성자 {{token.view.writer}}</td>
+                                    <td>조회수 {{token.view.hit}}</td>
+                                </tr>
+                            </table>
+                            <div id="content_content">
+                                {{token.view.content}}
+                            </div>
+                            <!-- <div id="content_content"></div> -->
+                    </div>
+                    {% if token.bool %}
+                <div id="content_footer">
+                    <a href="/board/modify?idx={{token.view.idx}}"><img src="	https://image.ygosu.com/images/btn_mod.gif" alt="수정하기"></a>         
+                    <a href="/board/delete?idx={{token.view.idx}}"><img src="https://image.ygosu.com/images/btn_delete.gif" alt="삭제하기"></a>
+                    {% endif %}
+                </div>      
+            </div>
+        </div>    
+    </div> 
 </body>
 </html>

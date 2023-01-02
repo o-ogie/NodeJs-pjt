@@ -26,8 +26,8 @@ exports.modifyBoard = async (idx) => {
     return result
 }
 
-exports.modifyBoardP = async (subject, content, idx) => {
-    const modifyInfo = {subject, content, idx}
+exports.modifyBoardP = async (idx, writer, subject, content, date, hit) => {
+    const modifyInfo = {idx, writer, subject, content, date, hit }
     const result = await board.modifyPost(modifyInfo)
     return result
 }

@@ -5,16 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/css/boardWrite.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-    <form method="post" action="/board/write">
-        <ul>
-            <li>작성자 : {{nickname}} <input type="hidden" name="nickname" value="{{nickname}}"></li>
-            <li>글제목: <input type="text" name="subject"></li>
-            <li><p>내용</p><textarea name="content" id="content" cols="50" rows="10"></textarea></li>
-        </ul>
-        <button type="submit">완료</button>
-    </form>
+<body>   
+    <div id="wrap">
+        <div id="header">
+            <div id="header_logoinfo">
+                <div id="user">
+                    {% if nick %}
+                    <span>{{nick.nickname}}님 어서오세요.</span>
+                        <a href="/user/logout">로그아웃</a>
+                        <a href="/user/profile">내 정보</a>
+                    {% endif %}
+                </div>
+                <h1 id="Logo">
+                    <a href="/">Logo</a>
+                </h1>
+            </div>    
+        </div>
+        <div id="content_wrap">
+            <div id="content_view">
+                <form method="post" action="/board/write">
+                    <div class="content_main">
+                        <div class="content_header">
+                            <input type="hidden" name="nickname" value="{{nickname}}"></li>
+                            제목: <input type="text" name="subject" style="width: 800px;" placeholder="제목을 입력해주세요."></li>
+                        </div>
+                        <div class="content_content">
+                            <textarea name="content" id="content" cols="145" rows="20" placeholder="내용을 입력해주세요."></textarea></li>
+                        </div>
+                    </div>
+                    <div id="content_footer">
+                        <button type="submit"><img src="https://image.ygosu.com/images/btn_ok.gif" alt="완료"></button>
+                    </div>  
+                </form>
+            </div>
+        </div>
     <script type="text/javascript" src="/js/board.js"></script>
 </body>
 </html>
