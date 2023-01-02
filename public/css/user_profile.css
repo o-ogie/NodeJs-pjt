@@ -8,6 +8,49 @@ ul, li {
     list-style: none;
 }
 
+/* 백그라운드 부분 */
+.container{
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: AnimationName 15s ease infinite;
+    width: 100%;
+    /* height: 100vh; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 35%;
+    text-align: center; */
+    -webkit-animation: AnimationName 16s ease infinite;
+    -moz-animation: AnimationName 16s ease infinite;
+    -o-animation: AnimationName 16s ease infinite;
+    animation: AnimationName 16s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* 백그라운드 부분 */
+
 #header{
     display: flex;
     justify-content: center;
@@ -95,3 +138,66 @@ ul, li {
     background: #ffaaff;
     cursor: pointer;
 }
+
+#body > #body_bottom{
+    height: 100px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+/* Profile bottom 부분*/
+
+.title-word{
+    animation: color-animation 4s linear infinite;
+}
+
+.title-word-1{
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+}
+
+.title-word-2{
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+}
+
+.title-word-3{
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+}
+
+.title-word-4{
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+    0% {color: var(--color-1)}
+    32% {color: var(--color-1)}
+    33% {color: var(--color-2)}
+    65% {color: var(--color-2)}
+    66% {color: var(--color-3)}
+    99% {color: var(--color-3)}
+    100% {color: var(--color-1)}
+}
+
+.bottom_container{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 20vh;
+}
+
+.h2title{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 800;
+    font-size:2.5vw;
+    text-transform: uppercase;
+}
+
+/* Profile bottom 부분*/
