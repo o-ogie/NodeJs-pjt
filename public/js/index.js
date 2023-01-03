@@ -130,12 +130,15 @@ const community = document.querySelector('#community')
 
 
 const commuHandler = (e) => {
-    cookie = document.cookie.split('=')[1] ===''
+    e.preventDefault()
+    cookie = document.cookie === ''
+    console.log(cookie)
     if (cookie) {
         alert('로그인이 필요한 컨텐츠입니다.')
         e.preventDefault();
         return
     }
+    location.href='/board/list'
 }
 
 community.addEventListener('click',commuHandler)

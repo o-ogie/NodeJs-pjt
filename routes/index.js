@@ -6,18 +6,12 @@ const user = require('./user.route')
 const board = require('./board/boardRoute')
 const admin = require('./admin.route')
 
+router.get('/',(req,res)=>{
 
-router.get('/', (req,res)=>{
-    // if(res.cookies.token !== undefined){
-    //     const cookies = req.cookies.token !== '' ? JSON.parse(req.cookies.token).nicknamed : undefined
-    //     console.log(cookies)
-    //     res.render('index.html', {token:cookies})
-    // } else{
-    //     res.render("index.html")
-    // }
-    const {token} = req.cookies
-    console.log(token)
-    res.render('index.html',{token})
+    let cookies = Object.values(req.cookies).toString()
+    cookies = cookies === '' ? undefined : JSON.parse(cookies).nickname
+
+    res.render('index.html',{token: cookies})
 })
 
 router.use('/user', user)
