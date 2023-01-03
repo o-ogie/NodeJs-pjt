@@ -3,6 +3,7 @@ const service = require('../services/boardService')
 exports.list = async (req,res)=>{
     const list = await service.listBoard()
     const token = JSON.parse(req.cookies.token)
+    console.log(token)
     if (token !== '') {
         res.render('board/list.html',{list,token})
     } else {
@@ -30,7 +31,7 @@ exports.writePost = async (req,res)=>{
 }
 
 exports.view = async (req,res)=>{
-    // const {idx, subject, content} = req.body
+    // const { subject, content} = req.body
     const cookies = JSON.parse(req.cookies.token)
     const nick = cookies.nickname
     const {idx} = req.query
