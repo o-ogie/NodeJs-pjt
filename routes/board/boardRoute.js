@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const boardController = require('../../controllers/board.controller')
+const boardController = require('../../controllers/boardController')
 
 router.get('/list', boardController.list);
 

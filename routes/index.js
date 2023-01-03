@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
+
 const user = require('./user.route')
 const board = require('./board/boardRoute')
 const admin = require('./admin.route')
